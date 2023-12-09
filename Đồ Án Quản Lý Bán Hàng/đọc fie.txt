@@ -1,0 +1,52 @@
+void writeNhanVienToFile(const NhanVien& nv, const  string& filename) {
+	 ofstream file(filename,  ios::app); // Mở file ở chế độ ghi tiếp vào cuối file
+	if (file.is_open()) {
+		file << "Ma nhan vien: " << nv.maNV <<  endl;
+		file << "Ten nhan vien: " << nv.tenNV <<  endl;
+		file << "Gioi tinh: " << nv.gioiTinh <<  endl;
+		file << "Ngay sinh: " << nv.NgaySinh.ngay << "/" << nv.NgaySinh.thang << "/" << nv.NgaySinh.nam <<  endl;
+		file << "Ngay vao lam: " << nv.ngayVaoLam.ngay << "/" << nv.ngayVaoLam.thang << "/" << nv.ngayVaoLam.nam <<  endl;
+		file << "Luong: " << nv.luong <<  endl;
+		file << "Phong ban: " << nv.phongBan <<  endl;
+		file << "---------------------------------------" <<  endl;
+		file.close();
+	}
+	else {
+		 cout << "Khong the mo file." <<  endl;
+	}
+}
+
+// Ghi thông tin của một phòng ban vào file
+void writePhongBanToFile(const PhongBan& pb, const  string& filename) {
+	 ofstream file(filename,  ios::app); // Mở file ở chế độ ghi tiếp vào cuối file
+
+	if (file.is_open()) {
+		file << "Ma phong: " << pb.maPhong <<  endl;
+		file << "Ten phong: " << pb.tenPhong <<  endl;
+		file << "So luong nhan vien: " << pb.soLuongNV <<  endl;
+		for (int i = 0; i < pb.soLuongNV; ++i) {
+			writeNhanVienToFile(pb.danhSachNV[i], filename); // Ghi thông tin từng nhân viên trong phòng ban
+		}
+		file << "---------------------------------------" <<  endl;
+		file.close();
+	}
+	else {
+		 cout << "Khong the mo file." <<  endl;
+	}
+}
+
+// Ghi thông tin của công ty vào file
+void writeCongTyToFile(const CongTy& congTy, const  string& filename) {
+	 ofstream file(filename, ios::app);
+
+	if (file.is_open()) {
+		file << "So luong phong ban: " << congTy.soLuongPB <<  endl;
+		for (int i = 0; i < congTy.soLuongPB; ++i) {
+			writePhongBanToFile(congTy.danhSachPB[i], filename); // Ghi thông tin từng phòng ban trong công ty
+		}
+		file.close();
+	}
+	else {
+		 cout << "Khong the mo file." <<  endl;
+	}
+}

@@ -1,0 +1,3 @@
+﻿  đồ án tùng.cpp
+C:\Users\Admin\Desktop\Đồ án tin học\main\đồ án tùng\đồ án tùng.cpp(46,13): warning C4326: return type of 'main' should be 'int' instead of 'void'
+LINK : fatal error LNK1168: cannot open C:\Users\Admin\Desktop\Đồ án tin học\main\x64\Debug\đồ án tùng.exe for writing
