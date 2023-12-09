@@ -1,0 +1,4 @@
+﻿  thoigian.cpp
+C:\Users\Admin\Desktop\thoigian\thoigian\thoigian.cpp(49,11): warning C4244: '=': conversion from '__int64' to 'int', possible loss of data
+C:\Users\Admin\Desktop\thoigian\thoigian\thoigian.cpp(54,13): warning C4326: return type of 'main' should be 'int' instead of 'void'
+  thoigian.vcxproj -> C:\Users\Admin\Desktop\thoigian\Debug\thoigian.exe
